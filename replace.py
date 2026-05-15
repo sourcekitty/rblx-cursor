@@ -38,9 +38,9 @@ def replace_roblox_cursor():
         target_path = os.path.join(cursor_dir, cursor)
         backup_path = target_path + ".bak"
 
-        #if os.path.exists(target_path) and not os.path.exists(backup_path):
-            #shutil.copy2(target_path, backup_path)
-            #print(f"SUCCESS: Created backup: {cursor}.bak")
+        if os.path.exists(target_path) and not os.path.exists(backup_path):
+            shutil.copy2(target_path, backup_path)
+            print(f"SUCCESS: Created backup: {cursor}.bak")
         try:
             shutil.copy2(user_cursors[index], target_path)
             print(f"SUCCESS: Replaced: {cursor}")
